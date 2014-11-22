@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+	div(ng-app='mainApp')
+		div(ui-view)
+		
+
+	h1= title
+	p Welcome to #{title}
+	script(type="text/javascript",src="/bower_components/jquery/dist/jquery.min.js")
+	script(type="text/javascript",src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+	script(type="text/javascript",src="/bower_components/angular/angular.min.js")
+	script(type="text/javascript",src="/bower_components/angular-ui-router/release/angular-ui-router.min.js")
+	script(type="text/javascript",src="/javascripts/js/app.js")
