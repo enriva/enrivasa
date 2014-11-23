@@ -1,2 +1,5 @@
-span
-	| I'm main
+div(ng-controller='mainCtrl')
+	article(id='index-text',class='sub-content-text')
+		span(ng-bind-html='deliberatelyTrustDangerousSnippet()')
+			//
+				| {{data.contents.index.text}}

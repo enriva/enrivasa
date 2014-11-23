@@ -4,7 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var MongoClient = require('mongodb').MongoClient
+/*var MongoClient = require('mongodb').MongoClient
 		, assert = require('assert');
 
 var url = 'mongodb://localhost:27017/';
@@ -13,7 +13,7 @@ MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
 
   db.close();
-});
+});*/
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

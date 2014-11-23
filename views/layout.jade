@@ -2,7 +2,12 @@ doctype html
 html
 	head
 		title= title
-		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+		//
+			link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/main.css')
 	body
-		block content
+		div(id='content',class='main-content',ng-controller='mainC',ng-app='mainApp')
+			include partials/bloks/header.jade
+			block content
+		include includes.jade

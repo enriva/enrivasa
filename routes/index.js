@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var MongoClient = require('mongodb').MongoClient
-		, assert = require('assert');
+/*var MongoClient = require('mongodb').MongoClient
+		, assert = require('assert');*/
 
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Enriva S.A. - Expertos en Soldadura' });
 });
 
 router.get('*/:route',function(req,res){
 	var filename = req.params['0'];
-	var insertDocuments = function(db,callback){
+/*	var insertDocuments = function(db,callback){
 
 	var collection = db.collection('documents');
 	collection.insert([
@@ -37,17 +37,17 @@ router.get('*/:route',function(req,res){
 	var url = 'mongodb://localhost:27017/'
 	MongoClient.connect(url, function(err, db) {
 		assert.equal(null, err);
-		console.log("Connected correctly to server");
+		console.log("Connected correctly to server");*/
 
 		/*insertDocuments(db, function() {
 			db.close();
 		});*/
 
-		getDocs(db,function(){
+/*		getDocs(db,function(){
 			db.close();	
 		});
 
-	});
+	});*/
 
 	res.render('tpl/'+filename);
 });

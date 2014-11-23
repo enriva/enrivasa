@@ -1,4 +1,4 @@
-angular.module('mainApp',['ui.router'])
+angular.module('mainApp',['mainApp.controller','mainApp.service','ui.router','firebase','ngSanitize'])
 .config(function($stateProvider,$urlRouterProvider){
 	$urlRouterProvider.otherwise('/main');
 	$stateProvider.state('/main',{
