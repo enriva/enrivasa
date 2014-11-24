@@ -1,13 +1,12 @@
 angular.module('mainApp.service',[])
-.factory('$getData',function($firebase){
+.factory('$getDataContents',function($firebase){
 	var ref = new Firebase('https://enrivasa.firebaseio.com/contents');
 	var data = $firebase(ref);
 	data = data.$asObject();
-	//console.log(data);
 	return data;
 })
-.factory('$getLocation',function($getData){
-	var copyData = $getData;
+.factory('$getLocation',function($getDataContents){
+	var copyData = $getDataContents;
 	return {
 		locationModel:{},
 		data:copyData,
@@ -16,9 +15,6 @@ angular.module('mainApp.service',[])
 			this.data.$loaded(function(d){
 				$('#page-tittle')[0].textContent = d[location].title;
 			});
-
-			//this.locationModel = this.data.contents[location];
-			//console.log(this);
 		}
 	};
 });
