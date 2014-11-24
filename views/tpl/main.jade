@@ -1,4 +1,18 @@
 div(ng-controller='mainCtrl')
+	div(id='myCarousel',class='carousel slide',data-interval='3000',data-ride='carousel')
+		ol(class='carousel-indicators')
+			li(data-target='#myCarousel',data-slide-to='$index',ng-repeat='image in data.index.carousel',class='{{image.class}}')
+		div(class='carousel-inner')
+			div(class='item {{image.class}}',ng-repeat='image in data.index.carousel')
+				img(src='{{image.path}}',alt='$index')
+		a(class='carousel-control left',href='#myCarousel',data-slide='prev')
+			span(class='glyphicon glyphicon-chevron-left')
+		a(class='carousel-control right',href='#myCarousel',data-slide='next')
+			span(class='glyphicon glyphicon-chevron-right')
+
+
+
+
 	article(id='index-text',class='sub-content-text')
 		span(ng-bind-html='dTs()')
 			//
