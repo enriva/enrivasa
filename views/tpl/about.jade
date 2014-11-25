@@ -1,0 +1,4 @@
+div(ng-controller='aboutCtrl')
+	img(src='{{data.about.image}}',class='content-img pull-left')
+	article(id='index-text',class='sub-content-text reduce-width pull-right')
+		span(ng-bind-html='dTs(data.about.text)')
