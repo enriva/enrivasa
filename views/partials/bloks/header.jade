@@ -16,14 +16,14 @@ header(id='content-header',class='content-header')
 			a(ui-sref='services',ng-class="{selected: $state.includes('services')}")
 				| Servicios
 		li
-			a(href='index.html')
+			a(href='',ng-class="{selected: $state.includes('products')}",id='products-launcher')
 				| Productos
-			ul(class='menu sub-menu hidden')
+			ul(class='menu sub-menu hidden',id='menu-products',sub-menu-launcher)
 				li
-					a(href='soldorb.html')
+					a(ui-sref='products.soldOrb',ng-class="{selected: $state.includes('products.soldOrb')}")
 						| Soldadura orbital
 				li
-					a(href='soldorb.html')
+					a(ui-sref='products.cortOrb',ng-class="{selected: $state.includes('products.cortOrb')}")
 						| Corte orbital
 				li
 					a(href='soldorb.html')
