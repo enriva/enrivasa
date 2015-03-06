@@ -38,5 +38,13 @@ angular.module('mainApp',[
 	}).state('products.cortOrb',{
 		url:'/corte_orbital',
 		templateUrl:'../views/tpl/cortOrb.jade'
+	})
+	.state('products.sierOrb',{
+		url:'/sierras_copas',
+		templateUrl:'../views/tpl/sierOrb.jade'
+	})
+	.state('products.talOrb',{
+		url:'/taladros_magneticos',
+		templateUrl:'../views/tpl/talOrb.jade'
 	});
 });

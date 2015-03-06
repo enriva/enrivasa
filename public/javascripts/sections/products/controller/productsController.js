@@ -2,7 +2,7 @@ angular.module('mainApp.controllerProducts',[])
 .controller('productsCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
 	$scope.data = $getDataContents;
 	console.log($scope.data);
-	$getLocation.cLocator('services');
+	$getLocation.cLocator('products');
 	$scope.dTs = function(content) {
 		return $sce.trustAsHtml(content);
 	}
@@ -10,7 +10,7 @@ angular.module('mainApp.controllerProducts',[])
 .controller('soldCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
 	$scope.data = $getDataContents;
 	console.log($scope.data);
-	$getLocation.cLocator('services');
+	$getLocation.cLocator('products');
 	$scope.dTs = function(content) {
 		return $sce.trustAsHtml(content);
 	}
@@ -18,7 +18,23 @@ angular.module('mainApp.controllerProducts',[])
 .controller('cortCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
 	$scope.data = $getDataContents;
 	console.log($scope.data);
-	$getLocation.cLocator('services');
+	$getLocation.cLocator('products');
+	$scope.dTs = function(content) {
+		return $sce.trustAsHtml(content);
+	}
+}])
+.controller('sierCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
+	$scope.data = $getDataContents;
+	console.log($scope.data);
+	$getLocation.cLocator('products');
+	$scope.dTs = function(content) {
+		return $sce.trustAsHtml(content);
+	}
+}])
+.controller('talCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
+	$scope.data = $getDataContents;
+	console.log($scope.data);
+	$getLocation.cLocator('products');
 	$scope.dTs = function(content) {
 		return $sce.trustAsHtml(content);
 	}

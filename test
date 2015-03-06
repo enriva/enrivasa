@@ -1,9 +1,8 @@
-div(ng-controller='cortCtrl')
 	article(id='index-text',class='sub-content-text margin-fullwith')
-		article(id='index-text',class='sub-content-text')
+		article(id='index-text',class='sub-content-text')	
 			h2
 				p
-					| This page is under construction. Sorry for inconveniences
+					| This page is under construction. Sorry for inconveniences.
 			h2
 				p
 					| Esta página esta en construcción. Disculpe las molestias.
@@ -37,7 +36,7 @@ div(ng-controller='cortCtrl')
 				li
 					| Correo:
 				li
-					a(href='mailto:sa.enriva@gmail.com',targuet='_top')
+					a(href='mailto:sa.enriva@gmail.com,targuet='_top'')
 						| sa.enriva@gmail.com
 			ul(class='contact-ul')
 				li

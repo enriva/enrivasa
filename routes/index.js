@@ -9,6 +9,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Enriva S.A. - Expertos en Soldadura' });
 });
 
+router.get('/debug',function(req,res){
+	res.render('tpl/sierOrb.jade');
+});
+
 router.get('*/:route',function(req,res){
 	var filename = req.params['0'];
 /*	var insertDocuments = function(db,callback){
