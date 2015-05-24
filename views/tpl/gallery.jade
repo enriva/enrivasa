@@ -1,6 +1,11 @@
 div(ng-controller='galleryCtrl')
-	| Galeria ok
-	//
-		img(src='{{data.services.image}}',class='content-img pull-right')
-		article(id='index-text',class='sub-content-text reduce-width pull-left')
-			span(ng-bind-html='dTs(data.services.text)')
+	div#myCarousel1(class='carousel slide carousel-galeria',data-interval='3000',data-ride='carousel')
+		ol(class='carousel-indicators')
+			li(data-target='#myCarousel1',data-slide-to='$index',ng-repeat='image in data.gallery.carousel',class='{{image.class}}')
+		div.carousel-inner
+			div(class='item {{image.class}}',ng-repeat='image in data.gallery.carousel')
+				img(src="{{image.path}}",alt='$index')
+			a(class='carousel-control left',href='#myCarousel1',data-slide='prev')
+				span(class='glyphicon glyphicon-chevron-left')
+			a(class='carousel-control right',href='#myCarousel1',data-slide='next')
+				span(class='glyphicon glyphicon-chevron-right')

@@ -13,4 +13,16 @@ angular.module('mainApp.directive',[])
 			$('#menu-products').prev().removeClass('selected');
 		}
 	});
+})
+.directive('a',function(){
+	return {
+		restrict:'E',
+		link: function(scope,elem,attrs){
+			if(attrs.href === '#myCarousel1'){
+				elem.on('click',function(e){
+					e.preventDefault();
+				});
+			}
+		}
+	}
 });
