@@ -4,6 +4,10 @@ angular.module('mainApp',[
 	'mainApp.controllerAbout',
 	'mainApp.controllerServices',
 	'mainApp.controllerProducts',
+	'mainApp.controllerGallery',
+	'mainApp.controllerVideos',
+	'mainApp.controllerCostumers',
+	'mainApp.controllerContact',
 	'mainApp.service',
 	'ui.router',
 	'firebase',
@@ -27,6 +31,22 @@ angular.module('mainApp',[
 	$stateProvider.state('services',{
 		url:'/servicios',
 		templateUrl:'../views/tpl/services.jade'
+	});
+	$stateProvider.state('gallery',{
+		url:'/galeria',
+		templateUrl:'../views/tpl/gallery.jade'
+	});
+	$stateProvider.state('videos',{
+		url:'/videos',
+		templateUrl:'../views/tpl/videos.jade'
+	});
+	$stateProvider.state('costumers',{
+		url:'/clientes',
+		templateUrl:'../views/tpl/costumers.jade'
+	});
+	$stateProvider.state('contact',{
+		url:'/contactenos',
+		templateUrl:'../views/tpl/contact.jade'
 	});
 	$stateProvider.state('products',{
 		abstract:true,

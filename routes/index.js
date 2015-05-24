@@ -52,7 +52,6 @@ router.get('*/:route',function(req,res){
 		});
 
 	});*/
-
 	res.render('tpl/'+filename);
 });
 

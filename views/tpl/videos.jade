@@ -1,0 +1,6 @@
+div(ng-controller='videosCtrl')
+	| Videos ok
+	//
+		img(src='{{data.services.image}}',class='content-img pull-right')
+		article(id='index-text',class='sub-content-text reduce-width pull-left')
+			span(ng-bind-html='dTs(data.services.text)')
