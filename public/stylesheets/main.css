@@ -308,6 +308,7 @@ header ul{
 
 .clientes-ul{
 	background-color:white;
+	list-style:none;
 }
 
 .clientes-ul li{

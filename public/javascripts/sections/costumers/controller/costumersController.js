@@ -5,5 +5,9 @@ angular.module('mainApp.controllerCostumers',[])
 	$getLocation.cLocator('costumers');
 	$scope.dTs = function(content) {
 		return $sce.trustAsHtml(content);
+	};
+	$scope.ort = function(index){
+		if((index % 2) === 0) return 'left';
+		return 'right';
 	}
 }]);
