@@ -14,11 +14,12 @@ angular.module('mainApp.directive',[])
 		}
 	});
 })
+// PREVENT a href FROM REDIRECTION
 .directive('a',function(){
 	return {
 		restrict:'E',
 		link: function(scope,elem,attrs){
-			if(attrs.href === '#myCarousel1'){
+			if((attrs.href === '#myCarousel1')||(attrs.href==='#noAction')){
 				elem.on('click',function(e){
 					e.preventDefault();
 				});

@@ -1,6 +1,28 @@
 div(ng-controller='videosCtrl')
-	| Videos ok
-	//
-		img(src='{{data.services.image}}',class='content-img pull-right')
-		article(id='index-text',class='sub-content-text reduce-width pull-left')
-			span(ng-bind-html='dTs(data.services.text)')
+	article(id="index-text",class="sub-content-text margin-fullwith")
+		div.cover-v
+			a(href="#")
+				img.logo(src='images/img/logo_white.png')
+			a(href='#noAction')
+				div.close-video(hide-video)
+					| X
+
+		ul.videos-ul
+			li(style='background-color:yellow')
+				h2
+					b
+						| This page is still under test period. This content is not defnitive. / Esta página se encuentra en período de prueba. Este contenido no es el definitivo
+			li(ng-repeat='video in data.videos.videos')
+				a(href='#noAction',show-video,id='{{$index + 1}}')
+					img.video_li(src='{{video.img}}')
+					div.video_name
+						| {{video.name}}
+				div.video_comment
+					| {{video.comment}}
+				//
+					PAY ATENTION TU THIS CV1 THIN, THIS NEEDS TO BE AUTOMATED AND VIDEO ID IN THE IFRAME TAG------------------------<<<<<
+				div.video_comment_cover(id='cv{{$index + 1}}')
+					h2
+						| {{video.name}}
+					| {{video.comment}}
+				iframe.video(id='video{{$index+1}}',ng-src='{{getIframeSrc(video.url)}}',frameborder='0',allowfullscreen)

@@ -6,6 +6,7 @@ angular.module('mainApp',[
 	'mainApp.controllerProducts',
 	'mainApp.controllerGallery',
 	'mainApp.controllerVideos',
+	'mainApp.directiveVideos',
 	'mainApp.controllerCostumers',
 	'mainApp.controllerContact',
 	'mainApp.service',
@@ -67,4 +68,11 @@ angular.module('mainApp',[
 		url:'/taladros_magneticos',
 		templateUrl:'../views/tpl/talOrb.jade'
 	});
+})
+// ALLOW URLS IN NG-SRC
+.config(function($sceDelegateProvider){
+	$sceDelegateProvider.resourceUrlWhitelist([
+		'self',
+		'http://www.youtube.com/**'
+	]);
 });

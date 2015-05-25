@@ -5,5 +5,9 @@ angular.module('mainApp.controllerVideos',[])
 	$getLocation.cLocator('videos');
 	$scope.dTs = function(content) {
 		return $sce.trustAsHtml(content);
-	}
+	};
+// RETURN URL
+	$scope.getIframeSrc = function(src){
+		return src;
+	};
 }]);
