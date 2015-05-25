@@ -335,6 +335,10 @@ header ul{
 	background-color:white;
 }
 
+.contact-class{
+	float:none!important;
+}
+
 .contact-ul li{
 	text-align:center;
 }
