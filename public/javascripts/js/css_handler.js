@@ -15,8 +15,10 @@ $(window).resize(function(){
 
 var show_menu = false;
 
+// Hide menu when default view in responsive mode
+if(screen_width <= 576) $('header ul').hide();
+
 var display_menu = function(){
-	console.log(show_menu);
 	if(!show_menu){
 		$('header ul').show();
 		show_menu = true;
@@ -30,8 +32,8 @@ $('#responsive-menu').on('click',function(){
 	if(screen_width <= 576) display_menu();
 });
 
-$('header ul a li').on('click',function(){
-	if(screen_width <= 576) display_menu();
+$('header ul li a').on('click',function(){
+	if(screen_width <= 576 && this.id !== 'products-launcher') display_menu();
 });
 
 $('header .main_link').on('click',function(){
