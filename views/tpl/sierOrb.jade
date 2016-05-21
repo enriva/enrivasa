@@ -1,94 +1,16 @@
 div(ng-controller='sierCtrl')
 	article(id='index-text',class='sub-content-text margin-fullwith')
-		article(id='index-text',class='sub-content-text')
-			h2
-				p
-					| This page is under construction. If you wish to get more information about these products please check these link:
-				a(href='https://www.dropbox.com/s/v3ybjzsr4slf6am/DM-page%201.pdf?dl=0')
-					| Link 1,
-				a(href='https://www.dropbox.com/s/63gcja72otcca31/DM-page%202.pdf?dl=0')
-					| Link 2,
-				p
-					| Sorry for inconveniences.</p>
-				br
-
-				p
-					| Esta página esta en construcción, si desea obtener mas información sobre estos productos por favor dirijase al los siguientes enlaces: 
-				a(href='https://www.dropbox.com/s/v3ybjzsr4slf6am/DM-page%201.pdf?dl=0')
-					| Link 1,
-				a(href='h│360 body{ttps://www.dropbox.com/s/63gcja72otcca31/DM-page%202.pdf?dl=0')
-					| Link 2
-				p
-					| Disculpe las molestias.
-
-			ul(class='contact-ul')
-				li
-					| Pais:
-				li
-					| Panama
-			ul(class='contact-ul')
-				li
-					| Nombre de contacto:
-				li
-					| Victor Rivas
-			ul(class='contact-ul')
-				li
-					| Teléfono Panama:
-				li
-					| (507) 263 6812
-				li
-					| (507) 606 42518
-			ul(class='contact-ul')
-				li
-					| Teléfono Venezuela:
-				li
-					| (58) 412 439 7248
-			ul(class='contact-ul')
-				li
-					| Correo:
-				li
-					a(href='mailto:sa.enriva@gmail.com',targuet='_top')
-						| sa.enriva@gmail.com
-			ul(class='contact-ul')
-				li
-					| Apartado postal:
-				li
-					| 581 Ciudad de Panamá
-
-
-
-			ul(class='contact-ul')
-				li
-					| Pais:
-				li
-					| Venezuela
-			ul(class='contact-ul')
-				li
-					| Nombre de contacto:
-				li
-					| Nestor Rivas
-			ul(class='contact-ul')
-				li
-					| Teléfono Venezuela:
-				li
-					| (58) 243 551 6286
-				li
-					| (58) 412 348 2602
-
-			ul(class='contact-ul')
-				li
-					| correo:
-				li
-					a(href='mailto:enriva@gmail.com',target='_top')
-						| enriva@gmail.com
-			ul(class='contact-ul')
-				li
-					| Apartado postal:
-				li
-					| 2102 Maracay
-			ul(class='contact-ul')
-				li
-					| Página web:
-				li
-					a(href='www.enriva.com.ve')
-						| www.enriva.com.ve
+		div()
+			ul(class='productos-ul')
+				li(ng-repeat='product in data.products.keego')
+					div(class='products-tittle',ng-if='product.groupT')
+						span(ng-bind-html='dTs(product.groupName)')
+					a(onclick='')
+						img(src='{{product.img}}')
+					div(class='productos_name')
+						| {{product.name}}
+					div(class='productos_comment')
+						b
+							| {{product.desc}}
+						div(class='hidden_comment',id='prod{{$index + 1}}')
+							span(ng-bind-html='dTs(product.full)')

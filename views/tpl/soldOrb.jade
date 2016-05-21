@@ -6,8 +6,6 @@ div(ng-controller='soldCtrl')
 					div(class='products-tittle',ng-if='product.groupT')
 						span(ng-bind-html='dTs(product.groupName)')
 					a(onclick='')
-						div(class='Indicator')
-							| Toar imagen para detalles
 						img(src='{{product.img}}')
 					div(class='productos_name')
 						| {{product.name}}
