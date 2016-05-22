@@ -1,16 +1,17 @@
 div(ng-controller='sierCtrl')
-	article(id='index-text',class='sub-content-text margin-fullwith')
-		div()
-			ul(class='productos-ul')
-				li(ng-repeat='product in data.products.keego')
-					div(class='products-tittle',ng-if='product.groupT')
-						span(ng-bind-html='dTs(product.groupName)')
-					a(onclick='')
-						img(src='{{product.img}}')
-					div(class='productos_name')
-						| {{product.name}}
-					div(class='productos_comment')
-						b
-							| {{product.desc}}
-						div(class='hidden_comment',id='prod{{$index + 1}}')
-							span(ng-bind-html='dTs(product.full)')
+  article(id='index-text',class='sub-content-text margin-fullwith')
+    div()
+      ul(class='productos-ul')
+        li(ng-repeat='product in data.products.keego',product-small)
+          div.productDetails(id='productDetail{{$index}}',product-details)
+          div(class='products-tittle',ng-if='product.groupT')
+            span(ng-bind-html='dTs(product.groupName)')
+          a(onclick='')
+            img(src='{{product.img}}')
+          div(class='productos_name')
+            | {{product.name}}
+          div(class='productos_comment')
+            b
+              | {{product.desc}}
+            div(class='hidden_comment',id='prod{{$index + 1}}')
+              span(ng-bind-html='dTs(product.full)')

@@ -1,29 +1,43 @@
 angular.module('mainApp.directive',[])
 .directive('subMenuLauncher',function(){
-	$('.menu li a').not('#products-launcher').on('click',function(){
-		$('#menu-products').addClass('hidden');
-		$('#menu-products').prev().removeClass('selected');
-	});
-	$('#products-launcher').on('click',function(){
-		if($('#menu-products').hasClass('hidden')){
-			$('#menu-products').removeClass('hidden');
-			$('#menu-products').prev().addClass('selected');
-		}else{
-			$('#menu-products').addClass('hidden');
-			$('#menu-products').prev().removeClass('selected');
-		}
-	});
+  $('.menu li a').not('#products-launcher').on('click',function(){
+    $('#menu-products').addClass('hidden');
+    $('#menu-products').prev().removeClass('selected');
+  });
+  $('#products-launcher').on('click',function(){
+    if($('#menu-products').hasClass('hidden')){
+      $('#menu-products').removeClass('hidden');
+      $('#menu-products').prev().addClass('selected');
+    }else{
+      $('#menu-products').addClass('hidden');
+      $('#menu-products').prev().removeClass('selected');
+    }
+  });
 })
 // PREVENT a href FROM REDIRECTION
 .directive('a',function(){
-	return {
-		restrict:'E',
-		link: function(scope,elem,attrs){
-			if((attrs.href === '#myCarousel1')||(attrs.href==='#noAction')){
-				elem.on('click',function(e){
-					e.preventDefault();
-				});
-			}
-		}
-	}
+  return {
+    restrict:'E',
+    link: function(scope,elem,attrs){
+      if((attrs.href === '#myCarousel1')||(attrs.href==='#noAction')){
+        elem.on('click',function(e){
+          e.preventDefault();
+        });
+      }
+    }
+  }
+})
+.directive('productSmall', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+
+      this.openProductDetailsCover = function() {
+        var $productDetailsCover = element.find('.productDetails');
+        $productDetailsCover.css('display', 'block');
+      };
+
+      element.on('click', this.openProductDetailsCover.bind(this));
+    },
+  };
 });
