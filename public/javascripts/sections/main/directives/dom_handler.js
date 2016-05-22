@@ -35,6 +35,8 @@ angular.module('mainApp.directive',[])
       this.openProductDetailsCover = function() {
         var $productDetailsCover = element.find('.productDetails');
         $productDetailsCover.css('display', 'block');
+        var $body = $('body');
+        $body.css('overflow', 'hidden');
       };
 
       element.on('click', this.openProductDetailsCover.bind(this));
