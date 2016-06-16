@@ -2,24 +2,29 @@ div(ng-controller='sierCtrl')
   article(id='index-text',class='sub-content-text margin-fullwith')
     div()
       ul(class='productos-ul')
-        li(ng-repeat='product in data.products.keego',product-small)
+        li(ng-repeat='product in data.products.keego',data-markupId='{{$index}}')
           div.productDetails(id='productDetail{{$index}}',product-details)
             div.container
               div.col-xs-12(class='productos_name')
                 | {{product.name}}
+                a.close-button.pull-right#noAction(ng-click='closeProductDetails($index)')
+                  div.close-button-container
+                    | X
+
 
             div.container
               div.col-xs-12
                 img.col-xs-12(src='{{product.img}}')
 
-          div(class='products-tittle',ng-if='product.groupT')
-            span(ng-bind-html='dTs(product.groupName)')
-          a.col-xs-12(onclick='')
-            img.col-xs-12(src='{{product.img}}')
-          div(class='productos_name')
-            | {{product.name}}
-          div(class='productos_comment')
-            b
-              | {{product.desc}}
-            div(class='hidden_comment',id='prod{{$index + 1}}')
-              span(ng-bind-html='dTs(product.full)')
+          div(class='product-container',product-small)
+            div(class='products-tittle',ng-if='product.groupT')
+              span(ng-bind-html='dTs(product.groupName)')
+            a.col-xs-12(onclick='')
+              img.col-xs-12(src='{{product.img}}')
+            div(class='productos_name')
+              | {{product.name}}
+            div(class='productos_comment')
+              b
+                | {{product.desc}}
+              div(class='hidden_comment',id='prod{{$index + 1}}')
+                span(ng-bind-html='dTs(product.full)')

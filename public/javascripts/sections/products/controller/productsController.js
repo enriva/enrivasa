@@ -30,6 +30,11 @@ angular.module('mainApp.controllerProducts',[])
   $scope.dTs = function(content) {
     return $sce.trustAsHtml(content);
   }
+
+  $scope.closeProductDetails = function(productId) {
+    var $productDetailCover = $('#productDetail' + productId);
+    $productDetailCover.css('display', 'none');
+  };
 }])
 .controller('talCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
   $scope.data = $getDataContents;

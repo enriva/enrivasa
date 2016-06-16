@@ -32,8 +32,10 @@ angular.module('mainApp.directive',[])
     restrict: 'A',
     link: function(scope, element, attrs) {
 
-      this.openProductDetailsCover = function() {
-        var $productDetailsCover = element.find('.productDetails');
+      this.openProductDetailsCover = function(event) {
+        var $parentElement = element.parent();
+        var markupṔroductIdTarget = $parentElement.data('markupid');
+        var $productDetailsCover = $parentElement.find('.productDetails#productDetail' + markupṔroductIdTarget);
         $productDetailsCover.css('display', 'block');
         var $body = $('body');
         $body.css('overflow', 'hidden');
