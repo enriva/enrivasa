@@ -5,22 +5,17 @@ div(ng-controller='sierCtrl')
         li(ng-repeat='product in data.products.keego',product-small)
           div.productDetails(id='productDetail{{$index}}',product-details)
             div.container
-              div(class='productos_name')
+              div.col-xs-12(class='productos_name')
                 | {{product.name}}
 
             div.container
-              div.col-xs-1
-              div.col-xs-10
+              div.col-xs-12
                 img.col-xs-12(src='{{product.img}}')
-              div.col-xs-1
-                //
-                  button.btn.btn-default.col-xs-12(type='button', aria-label='Left Align')
-                    span.glyphicon.glyphicon-star(aria-hidden='true')
 
           div(class='products-tittle',ng-if='product.groupT')
             span(ng-bind-html='dTs(product.groupName)')
-          a(onclick='')
-            img(src='{{product.img}}')
+          a.col-xs-12(onclick='')
+            img.col-xs-12(src='{{product.img}}')
           div(class='productos_name')
             | {{product.name}}
           div(class='productos_comment')
