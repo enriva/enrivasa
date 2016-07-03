@@ -25,10 +25,32 @@
   position: initial;
 }
 
-.preductDetails-content {
+.productDetails-content {
   overflow: auto;
   position: relative;
   height: 100%;
+}
+
+ul.productMenu {
+  padding: 0px;
+  padding-left: 0px!important;
+}
+
+ul.productMenu li {
+  float: left;
+  margin: 2px 4px;
+  width: 29.9%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 0px;
+}
+
+ul.productMenu li.active {
+  border-bottom-width: 3px;
+  border-bottom-color: #3289B6;
+  border-bottom-style: solid;
 }
 
 @media only screen and (min-width: 150px) and (max-width:580px){

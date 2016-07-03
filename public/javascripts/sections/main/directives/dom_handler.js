@@ -44,4 +44,23 @@ angular.module('mainApp.directive',[])
       element.on('click', this.openProductDetailsCover.bind(this));
     },
   };
+})
+.directive('productDetilsTab', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+
+      this.openProductdetailTabSection = function(event) {
+        var $tab = $(event.currentTarget);
+        var isActive = $tab.hasClass('active');
+        var $tabSiblins = $tab.parent().children();
+        if (!isActive) {
+          $tabSiblins.removeClass('active');
+          $tab.addClass('active');
+        }
+      };
+
+      element.on('click', this.openProductdetailTabSection.bind(this));
+    },
+  };
 });
