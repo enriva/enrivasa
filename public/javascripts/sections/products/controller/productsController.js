@@ -32,8 +32,10 @@ angular.module('mainApp.controllerProducts',[])
   }
 
   $scope.closeProductDetails = function(productId) {
+    var $body = $('body');
     var $productDetailCover = $('#productDetail' + productId);
     $productDetailCover.css('display', 'none');
+    $body.css('overflow', 'auto');
   };
 }])
 .controller('talCtrl',['$scope','$sce','$getLocation','$getDataContents',function($scope,$sce,$getLocation,$getDataContents){
