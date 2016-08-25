@@ -53,5 +53,13 @@ ul.productMenu li.active {
   border-bottom-style: solid;
 }
 
+.product-detail-content {
+  display: none;
+}
+
+.product-detail-content.active {
+  display: block!important;
+}
+
 @media only screen and (min-width: 150px) and (max-width:580px){
 }

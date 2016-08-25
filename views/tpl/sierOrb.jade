@@ -28,6 +28,14 @@ div(ng-controller='sierCtrl')
                   li(product-detils-tab)#2
                     a
                       | Video
+
+              div#product-specification.active(class='product-detail-content product-detail0')
+                | SPEC
+              div#product-descripcion(class='product-detail-content product-detail1')
+                | DESC
+              div#product-video(class='product-detail-content product-detail2')
+                | VIDEO
+
           div(class='product-container',product-small)
             div(class='products-tittle',ng-if='product.groupT')
               span(ng-bind-html='dTs(product.groupName)')

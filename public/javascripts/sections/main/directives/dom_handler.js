@@ -52,8 +52,13 @@ angular.module('mainApp.directive',[])
 
       this.openProductdetailTabSection = function(event) {
         var $tab = $(event.currentTarget);
+        var tabContentIdToActivate = $tab.attr('id');
         var isActive = $tab.hasClass('active');
         var $tabSiblins = $tab.parent().children();
+        var $tabActiveContent = $('.product-detail-content.active');
+        $tabActiveContent.removeClass('active');
+        var $selectedContentTab = $('.product-detail' + tabContentIdToActivate);
+        $selectedContentTab.addClass('active');
         if (!isActive) {
           $tabSiblins.removeClass('active');
           $tab.addClass('active');
