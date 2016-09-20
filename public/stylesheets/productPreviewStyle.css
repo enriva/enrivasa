@@ -55,6 +55,9 @@ ul.productMenu li.active {
 
 .product-detail-content {
   display: none;
+  margin-top: 37px;
+  width: 100%;
+  background-color: white;
 }
 
 .product-detail-content.active {
