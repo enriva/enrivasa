@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Enriva S.A. - Expertos en Soldadura' });
+  res.render('index', { title: 'Enriva C.A. - Expertos en Soldadura' });
 });
 
 router.get('/debug',function(req,res){

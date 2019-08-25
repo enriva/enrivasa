@@ -1,6 +1,6 @@
 angular.module('mainApp.service',[])
 .factory('$getDataContents',function($firebase){
-	var ref = new Firebase('https://enrivasa.firebaseio.com/contents');
+	var ref = new Firebase('https://enriva-venezuela.firebaseio.com/contents');
 	var data = $firebase(ref);
 	data = data.$asObject();
 	return data;
